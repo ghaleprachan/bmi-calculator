@@ -1,5 +1,6 @@
 import 'file:///D:/1Flutter_Project/bmi_calculator/lib/customwidgets/reuseable_card.dart';
 import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/customwidgets/counter_content.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,7 +17,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  int height = 180;
+  int height = 150;
+  int weight = 60;
+  int age = 21;
 
   @override
   Widget build(BuildContext context) {
@@ -120,10 +123,42 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(color: kActiveCardColor),
+                  child: ReusableCard(
+                    color: kActiveCardColor,
+                    childWidget: CounterContent(
+                      label: "WEIGHT",
+                      counter: weight,
+                      sub: () {
+                        setState(() {
+                          weight--;
+                        });
+                      },
+                      add: () {
+                        setState(() {
+                          weight++;
+                        });
+                      },
+                    ),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(color: kActiveCardColor),
+                  child: ReusableCard(
+                    color: kActiveCardColor,
+                    childWidget: CounterContent(
+                      label: "AGE",
+                      counter: age,
+                      sub: () {
+                        setState(() {
+                          age--;
+                        });
+                      },
+                      add: () {
+                        setState(() {
+                          age++;
+                        });
+                      },
+                    ),
+                  ),
                 ),
               ],
             ),
