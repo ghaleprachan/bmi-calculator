@@ -4,6 +4,8 @@ import '../constants.dart';
 import '../input_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'RoundIcon.dart';
+
 class CounterContent extends StatelessWidget {
   CounterContent({this.label, this.counter, this.add, this.sub});
 

@@ -1,6 +1,7 @@
 import 'file:///D:/1Flutter_Project/bmi_calculator/lib/customwidgets/reuseable_card.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/customwidgets/counter_content.dart';
+import 'package:bmi_calculator/result_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -163,17 +164,29 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            width: double.infinity,
-            height: kBottomContainerHeight,
-            // padding: EdgeInsets.symmetric(vertical: 16),
-            margin: EdgeInsets.only(top: 10),
-            alignment: Alignment.center,
-            color: kBottomContainerColor,
-            child: Text(
-              "Calculate",
-              style: TextStyle(
-                fontSize: 18,
+          GestureDetector(
+            onTap: () {
+              /*Navigator.pushNamed(context, '/first');*/
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ResultScreen();
+                  },
+                ),
+              );
+            },
+            child: Container(
+              width: double.infinity,
+              height: kBottomContainerHeight,
+              margin: EdgeInsets.only(top: 10),
+              alignment: Alignment.center,
+              color: kBottomContainerColor,
+              child: Text(
+                "Calculate",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
               ),
             ),
           ),
