@@ -1,3 +1,4 @@
+import 'customwidgets/clickable_container.dart';
 import 'file:///D:/1Flutter_Project/bmi_calculator/lib/customwidgets/reuseable_card.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/customwidgets/counter_content.dart';
@@ -164,8 +165,9 @@ class _InputScreenState extends State<InputScreen> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {
+          ClickableContainer(
+            label: "RE-CALCULATE",
+            onClick: () {
               /*Navigator.pushNamed(context, '/first');*/
               Navigator.push(
                 context,
@@ -176,19 +178,6 @@ class _InputScreenState extends State<InputScreen> {
                 ),
               );
             },
-            child: Container(
-              width: double.infinity,
-              height: kBottomContainerHeight,
-              margin: EdgeInsets.only(top: 10),
-              alignment: Alignment.center,
-              color: kBottomContainerColor,
-              child: Text(
-                "CALCULATE",
-                style: TextStyle(
-                  fontSize: 18,
-                ),
-              ),
-            ),
           ),
         ],
       ),

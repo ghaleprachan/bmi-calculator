@@ -2,6 +2,8 @@ import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'customwidgets/clickable_container.dart';
+
 class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,31 +36,9 @@ class ResultScreen extends StatelessWidget {
                 ),
               ),
             ),
-            GestureDetector(
-              onTap: () {
-                /*Navigator.pushNamed(context, '/first');*/
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ResultScreen();
-                    },
-                  ),
-                );
-              },
-              child: Container(
-                width: double.infinity,
-                height: kBottomContainerHeight,
-                margin: EdgeInsets.only(top: 10),
-                alignment: Alignment.center,
-                color: kBottomContainerColor,
-                child: Text(
-                  "RE-CALCULATE",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-              ),
+            ClickableContainer(
+              label: "RE-CALCULATE",
+              onClick: () {},
             ),
           ],
         ),
@@ -66,3 +46,5 @@ class ResultScreen extends StatelessWidget {
     );
   }
 }
+
+
