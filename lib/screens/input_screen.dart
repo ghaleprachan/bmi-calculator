@@ -1,14 +1,16 @@
-import 'customwidgets/clickable_container.dart';
-import 'file:///D:/1Flutter_Project/bmi_calculator/lib/customwidgets/reuseable_card.dart';
+import 'package:bmi_calculator/calculate_bmi.dart';
+
+import '../components/clickable_container.dart';
+import '../components/counter_content.dart';
+import '../components/icon_content.dart';
+import '../components/reuseable_card.dart';
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/customwidgets/counter_content.dart';
-import 'package:bmi_calculator/result_screen.dart';
+import 'file:///D:/1Flutter_Project/bmi_calculator/lib/screens/result_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'customwidgets/icon_content.dart';
-import 'constants.dart';
+import '../constants.dart';
 
 enum Gender { Male, Female }
 
@@ -168,14 +170,17 @@ class _InputScreenState extends State<InputScreen> {
           ClickableContainer(
             label: "CALCULATE",
             onClick: () {
+              CalculateBmi cal = CalculateBmi(height: height, weight: weight);
               /*Navigator.pushNamed(context, '/first');*/
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return ResultScreen();
-                  },
-                ),
+                MaterialPageRoute(builder: (context) {
+                  return ResultScreen(
+                    bmiResult: cal.calculateBmi(),
+                    resultText: cal.getResults(),
+                    resultInterpretation: cal.getInterpretation(),
+                  );
+                }),
               );
             },
           ),
