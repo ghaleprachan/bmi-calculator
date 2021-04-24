@@ -6,7 +6,7 @@ class ClickableContainer extends StatelessWidget {
   final String label;
   final Function onClick;
 
-  ClickableContainer({this.label, this.onClick})
+  ClickableContainer({this.label, this.onClick});
 
   @override
   Widget build(BuildContext context) {

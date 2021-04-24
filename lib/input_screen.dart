@@ -166,7 +166,7 @@ class _InputScreenState extends State<InputScreen> {
             ),
           ),
           ClickableContainer(
-            label: "RE-CALCULATE",
+            label: "CALCULATE",
             onClick: () {
               /*Navigator.pushNamed(context, '/first');*/
               Navigator.push(
