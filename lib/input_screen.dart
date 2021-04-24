@@ -1,7 +1,7 @@
 import 'file:///D:/1Flutter_Project/bmi_calculator/lib/customwidgets/reuseable_card.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/customwidgets/counter_content.dart';
-import 'package:bmi_calculator/result_page.dart';
+import 'package:bmi_calculator/result_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,12 +11,12 @@ import 'constants.dart';
 
 enum Gender { Male, Female }
 
-class InputPage extends StatefulWidget {
+class InputScreen extends StatefulWidget {
   @override
-  _InputPageState createState() => _InputPageState();
+  _InputScreenState createState() => _InputScreenState();
 }
 
-class _InputPageState extends State<InputPage> {
+class _InputScreenState extends State<InputScreen> {
   Gender selectedGender;
   int height = 150;
   int weight = 60;
@@ -183,7 +183,7 @@ class _InputPageState extends State<InputPage> {
               alignment: Alignment.center,
               color: kBottomContainerColor,
               child: Text(
-                "Calculate",
+                "CALCULATE",
                 style: TextStyle(
                   fontSize: 18,
                 ),

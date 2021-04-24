@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import '../constants.dart';
-import '../input_page.dart';
+import '../input_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'RoundIcon.dart';

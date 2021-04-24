@@ -1,7 +1,7 @@
-import 'package:bmi_calculator/result_page.dart';
+import 'package:bmi_calculator/result_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'input_page.dart';
+import 'input_screen.dart';
 
 void main() => runApp(BmiCalculator());
 
@@ -26,7 +26,7 @@ class BmiCalculator extends StatelessWidget {
         ),
         // brightness: Brightness.light, // Dark or light theme
       ),
-      home: InputPage(),
+      home: InputScreen(),
     );
   }
 }
